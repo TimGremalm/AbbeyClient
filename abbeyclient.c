@@ -15,7 +15,7 @@
 
 #include <semphr.h>
 
-#define MQTT_HOST ("192.168.0.1")
+#define MQTT_HOST ("192.168.0.186")
 #define MQTT_PORT 1883
 
 #define MQTT_USER NULL
@@ -150,7 +150,7 @@ static void mqtt_task(void *pvParameters) {
 			ret = mqtt_yield(&client, 1000);
 			if (ret == MQTT_DISCONNECTED)
 				break;
-			char msg[] = "2\0";
+			char msg[] = "1\0";
 			mqtt_message_t message;
 			message.payload = msg;
 			message.payloadlen = sizeof(msg);
